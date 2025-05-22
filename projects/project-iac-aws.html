@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IaC with Terraform - Your Name DevOps Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Specific styles for project pages */
+        .project-detail {
+            padding: 80px 0;
+            text-align: left;
+            background-color: var(--background-color);
+        }
+        .project-detail .container {
+            max-width: 900px;
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+        .project-detail h1 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        .project-detail h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            border-bottom: 2px solid rgba(0, 173, 181, 0.3);
+            padding-bottom: 5px;
+        }
+        .project-detail p, .project-detail ul, .project-detail ol {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: rgba(238, 238, 238, 0.9);
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: block; /* Center images */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .project-detail figcaption {
+            font-size: 0.9em;
+            color: rgba(238, 238, 238, 0.7);
+            margin-top: -10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project-detail ul, .project-detail ol {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 8px;
+        }
+        .project-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .project-links .btn {
+            margin: 0 15px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Your Name</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../assets/resume.pdf" target="_blank" class="btn-download">Resume</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <h1>Infrastructure as Code with Terraform on AWS</h1>
+
+                <p><strong>Problem Statement:</strong> Our existing cloud infrastructure was provisioned manually, leading to inconsistencies, configuration drift, and significant delays in spinning up new environments. This made disaster recovery and scaling challenging and error-prone.</p>
+
+                <h3>My Role & Responsibilities:</h3>
+                <ul>
+                    <li>Designed and implemented an Infrastructure as Code (IaC) strategy using Terraform for provisioning and managing AWS resources.</li>
+                    <li>Created modular and reusable Terraform modules for common AWS services (VPC, EC2, RDS, S3, ALB, Route 53).</li>
+                    <li>Managed Terraform state using S3 backend with DynamoDB locking to ensure collaboration and prevent conflicts.</li>
+                    <li>Integrated Terraform with CI/CD pipelines (e.g., Jenkins, GitHub Actions) for automated infrastructure deployments.</li>
+                    <li>Implemented best practices for security (IAM roles, security groups), cost optimization (instance types, autoscaling), and high availability (multi-AZ deployments).</li>
+                    <li>Developed custom Terraform providers/scripts where native resources were insufficient.</li>
+                    <li>Documented infrastructure architecture and Terraform usage.</li>
+                </ul>
+
+                <h3>Technologies Used:</h3>
+                <div class="project-tech">
+                    <span>Terraform</span>
+                    <span>AWS</span>
+                    <span>VPC</span>
+                    <span>EC2</span>
+                    <span>RDS</span>
+                    <span>S3</span>
+                    <span>Lambda</span>
+                    <span>IAM</span>
+                    <span>Git</span>
+                </div>
+
+                <h3>Implementation Details:</h3>
+                <p>The project involved transitioning from manual AWS console operations to a fully automated IaC approach:</p>
+                <ol>
+                    <li><strong>Infrastructure Blueprints:</strong> Defined network architecture (VPCs, subnets, route tables), compute resources (EC2 instances, Auto Scaling Groups), databases (RDS), storage (S3 buckets), and load balancers (ALB) using Terraform HCL.</li>
+                    <li><strong>Module Development:</strong> Created self-contained Terraform modules for common resource patterns to promote reusability and reduce code duplication across projects.</li>
+                    <li><strong>State Management:</strong> Configured an S3 bucket for remote Terraform state storage and DynamoDB for state locking, crucial for team collaboration and preventing concurrent modifications.</li>
+                    <li><strong>Automated Deployment:</strong> Integrated Terraform `plan` and `apply` commands into CI/CD pipelines (e.g., GitHub Actions workflow) to automate infrastructure provisioning upon code merges to the main branch.</li>
+                    <li><strong>Environment Separation:</strong> Used Terraform workspaces or separate folders for `dev`, `staging`, and `production` environments, ensuring isolated and consistent deployments.</li>
+                    <li><strong>Security & Compliance:</strong> Implemented AWS IAM roles with least privilege, configured security groups, and used KMS for encryption of sensitive data. Ensured compliance with organizational policies through Terraform resource definitions.</li>
+                </ol>
+
+                <img src="../images/aws-architecture-diagram.png" alt="AWS Architecture Diagram">
+                <figcaption>Example AWS architecture provisioned using Terraform.</figcaption>
+
+                <h3>Key Achievements & Results:</h3>
+                <ul>
+                    <li>**Reduced infrastructure provisioning time by 90%**, from hours/days to minutes.</li>
+                    <li>**Eliminated configuration drift** by ensuring all infrastructure is defined and managed as code.</li>
+                    <li>**Improved disaster recovery capabilities** through reproducible environment deployments.</li>
+                    <li>**Enhanced security posture** with consistent application of security policies through code.</li>
+                    <li>**Lowered operational costs** by optimizing resource allocation and lifecycle management.</li>
+                </ul>
+
+                <h3>Challenges & Solutions:</h3>
+                <p><strong>Challenge:</strong> Managing dependencies between different Terraform modules and ensuring proper resource creation order.</p>
+                <p><strong>Solution:</strong> Leveraged Terraform's `depends_on` meta-argument and structured modules carefully to ensure implicit dependencies were correctly handled. Used `terraform output` to pass values between root modules where explicit dependencies were necessary.</p>
+
+                <p><strong>Challenge:</strong> Handling sensitive data (e.g., database passwords) within Terraform configurations securely without exposing them in plain text.</p>
+                <p><strong>Solution:</strong> Utilized AWS Secrets Manager to store sensitive data and referenced these secrets within Terraform using data sources, ensuring secrets are never hardcoded or stored in state files unencrypted.</p>
+
+                <div class="project-links">
+                    <a href="https://github.com/your-github-username/project-repo-iac-aws" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                <p style="margin-top: 50px; text-align: center;"><a href="../index.html#projects" class="project-link">&larr; Back to Projects</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year-project"></span> Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-project').textContent = new Date().getFullYear();
+
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(innerLink => {
+                    innerLink.style.animation = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

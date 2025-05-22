@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring with Prometheus & Grafana - Your Name DevOps Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Specific styles for project pages */
+        .project-detail {
+            padding: 80px 0;
+            text-align: left;
+            background-color: var(--background-color);
+        }
+        .project-detail .container {
+            max-width: 900px;
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+        .project-detail h1 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        .project-detail h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            border-bottom: 2px solid rgba(0, 173, 181, 0.3);
+            padding-bottom: 5px;
+        }
+        .project-detail p, .project-detail ul, .project-detail ol {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: rgba(238, 238, 238, 0.9);
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: block; /* Center images */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .project-detail figcaption {
+            font-size: 0.9em;
+            color: rgba(238, 238, 238, 0.7);
+            margin-top: -10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project-detail ul, .project-detail ol {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 8px;
+        }
+        .project-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .project-links .btn {
+            margin: 0 15px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Your Name</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../assets/resume.pdf" target="_blank" class="btn-download">Resume</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <h1>Monitoring & Alerting with Prometheus and Grafana</h1>
+
+                <p><strong>Problem Statement:</strong> Our microservices ecosystem lacked comprehensive, centralized monitoring, leading to reactive troubleshooting and extended downtime during incidents. We needed a robust solution to collect metrics, visualize data, and generate timely alerts.</p>
+
+                <h3>My Role & Responsibilities:</h3>
+                <ul>
+                    <li>Designed and implemented a scalable monitoring solution using Prometheus for metrics collection and Grafana for visualization and alerting.</li>
+                    <li>Configured Prometheus to scrape metrics from various targets: Node Exporter for host-level metrics, cAdvisor for container metrics, and application-specific endpoints.</li>
+                    <li>Developed custom Grafana dashboards for key performance indicators (KPIs) and operational metrics for different microservices and infrastructure components.</li>
+                    <li>Set up alerting rules in Prometheus Alertmanager to notify on critical thresholds via Slack, email, or PagerDuty.</li>
+                    <li>Implemented blackbox and whitebox monitoring strategies for service health and availability.</li>
+                    <li>Containerized Prometheus and Grafana instances using Docker for easy deployment and management.</li>
+                    <li>Provided training and documentation to development and operations teams on using the new monitoring stack.</li>
+                </ul>
+
+                <h3>Technologies Used:</h3>
+                <div class="project-tech">
+                    <span>Prometheus</span>
+                    <span>Grafana</span>
+                    <span>Alertmanager</span>
+                    <span>Docker</span>
+                    <span>Node Exporter</span>
+                    <span>cAdvisor</span>
+                    <span>PromQL</span>
+                    <span>Helm (for Kubernetes deployments)</span>
+                </div>
+
+                <h3>Implementation Details:</h3>
+                <p>The monitoring solution was deployed to provide full visibility into the health and performance of our applications and underlying infrastructure:</p>
+                <ol>
+                    <li><strong>Metrics Collection:</strong> Deployed Prometheus servers and configured `scrape_configs` to collect metrics from:
+                        <ul>
+                            <li>**Node Exporter:** Installed on all EC2 instances/VMs to gather CPU, memory, disk I/O, network stats.</li>
+                            <li>**cAdvisor:** Deployed on Kubernetes nodes to provide container resource usage metrics.</li>
+                            <li>**Custom Application Exporters:** Integrated Prometheus client libraries into applications (e.g., Python, Go) to expose custom business metrics and API latency.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data Storage & Retrieval:</strong> Prometheus stores time-series data locally and integrates with long-term storage solutions (e.g., Thanos, Mimir) for historical data analysis.</li>
+                    <li><strong>Visualization (Grafana):</strong> Configured Grafana to connect to Prometheus as a data source. Built interactive dashboards with panels visualizing:
+                        <ul>
+                            <li>Application health (response times, error rates).</li>
+                            <li>Resource utilization (CPU, memory, disk).</li>
+                            <li>Network performance.</li>
+                            <li>Kubernetes cluster health.</li>
+                            <li>Custom business metrics.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alerting (Alertmanager):</strong> Defined alerting rules in Prometheus (`alert.rules`) based on PromQL queries. Alertmanager was configured to deduplicate, group, and route alerts to relevant teams via various notification channels (Slack, email).</li>
+                    <li><strong>Deployment:</strong> Prometheus, Grafana, and Alertmanager were deployed as Docker containers, orchestrated by Kubernetes using Helm charts for declarative setup and easy upgrades.</li>
+                </ol>
+
+                <img src="../images/grafana-dashboard-screenshot.png" alt="Grafana Dashboard Screenshot">
+                <figcaption>Example screenshot of a Grafana dashboard displaying application and infrastructure metrics.</figcaption>
+
+                <h3>Key Achievements & Results:</h3>
+                <ul>
+                    <li>**Reduced Mean Time To Recovery (MTTR) by 40%** due to proactive alerting and rich dashboard insights.</li>
+                    <li>**Improved system uptime by 99.9%** by identifying and addressing performance bottlenecks before they impacted users.</li>
+                    <li>**Enhanced observability across the entire stack**, providing developers and operations teams with a single pane of glass for monitoring.</li>
+                    <li>**Facilitated data-driven decision making** for capacity planning and performance optimization.</li>
+                </ul>
+
+                <h3>Challenges & Solutions:</h3>
+                <p><strong>Challenge:</strong> Managing high cardinality metrics and long-term storage for large-scale Prometheus deployments.</p>
+                <p><strong>Solution:</strong> Implemented recording rules to pre-aggregate frequently queried data and explored remote storage integrations (e.g., using Thanos Sidecar) for cost-effective long-term retention and global query view.</p>
+
+                <p><strong>Challenge:</strong> Fine-tuning alerting rules to reduce false positives and ensure actionable alerts.</p>
+                <p><strong>Solution:</strong> Iteratively refined PromQL queries and alert thresholds based on historical data and feedback from on-call teams. Implemented alert suppression and grouping in Alertmanager to prevent alert storms during outages.</p>
+
+                <div class="project-links">
+                    <a href="https://github.com/your-github-username/project-repo-monitoring" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                <p style="margin-top: 50px; text-align: center;"><a href="../index.html#projects" class="project-link">&larr; Back to Projects</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year-project"></span> Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-project').textContent = new Date().getFullYear();
+
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(innerLink => {
+                    innerLink.style.animation = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

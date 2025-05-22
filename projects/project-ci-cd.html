@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD Pipeline - Your Name DevOps Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Specific styles for project pages */
+        .project-detail {
+            padding: 80px 0;
+            text-align: left;
+            background-color: var(--background-color);
+        }
+        .project-detail .container {
+            max-width: 900px;
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+        .project-detail h1 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        .project-detail h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            border-bottom: 2px solid rgba(0, 173, 181, 0.3);
+            padding-bottom: 5px;
+        }
+        .project-detail p, .project-detail ul, .project-detail ol {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: rgba(238, 238, 238, 0.9);
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: block; /* Center images */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .project-detail figcaption {
+            font-size: 0.9em;
+            color: rgba(238, 238, 238, 0.7);
+            margin-top: -10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project-detail ul, .project-detail ol {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 8px;
+        }
+        .project-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .project-links .btn {
+            margin: 0 15px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Your Name</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../assets/resume.pdf" target="_blank" class="btn-download">Resume</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <h1>Automated CI/CD Pipeline for Microservices</h1>
+
+                <p><strong>Problem Statement:</strong> Our development team faced significant delays and inconsistencies in deploying microservices due to manual processes. This led to prolonged release cycles, frequent human errors, and a lack of transparency, impacting overall efficiency and application reliability.</p>
+
+                <h3>My Role & Responsibilities:</h3>
+                <ul>
+                    <li>Led the design and implementation of an automated CI/CD pipeline from conceptualization to production.</li>
+                    <li>Configured Jenkins master and agent nodes for scalable build environments using Docker.</li>
+                    <li>Integrated source code management (GitLab) with Jenkins via webhooks for immediate, trigger-based builds.</li>
+                    <li>Developed optimized Dockerfiles for various microservices, ensuring small image sizes and security best practices.</li>
+                    <li>Implemented Kubernetes deployment manifests (YAML) using Helm charts for declarative application orchestration and easy configuration management.</li>
+                    <li>Set up comprehensive unit, integration, and end-to-end testing within the pipeline using appropriate testing frameworks.</li>
+                    <li>Ensured secure credential management using Jenkins Credentials Plugin and Kubernetes Secrets.</li>
+                    <li>Configured Prometheus and Grafana for real-time monitoring of pipeline performance, application health, and infrastructure metrics.</li>
+                </ul>
+
+                <h3>Technologies Used:</h3>
+                <div class="project-tech">
+                    <span>Jenkins</span>
+                    <span>Docker</span>
+                    <span>Kubernetes</span>
+                    <span>Helm</span>
+                    <span>GitLab</span>
+                    <span>Ansible</span>
+                    <span>Prometheus</span>
+                    <span>Grafana</span>
+                    <span>Bash Scripting</span>
+                </div>
+
+                <h3>Implementation Details:</h3>
+                <p>The pipeline was structured as follows, embodying a "GitOps" approach where configuration is managed as code:</p>
+                <ol>
+                    <li><strong>Code Commit & Push:</strong> Developers push code to feature branches in GitLab.</li>
+                    <li><strong>Webhook Trigger:</strong> GitLab webhook triggers a Jenkins Multibranch Pipeline job.</li>
+                    <li><strong>Build & Test (Jenkinsfile):</strong> Jenkins pulls code, builds Docker images from optimized Dockerfiles, and runs unit/integration tests within isolated containers.</li>
+                    <li><strong>Image Push:</strong> On successful build, the Docker image is tagged and pushed to a private Docker Registry (e.g., GitLab Container Registry or AWS ECR).</li>
+                    <li><strong>Staging Deployment:</strong> A dedicated Jenkins stage uses `kubectl apply -f` (via Helm templates rendered by Jenkins) to deploy the application to a staging Kubernetes cluster.</li>
+                    <li><strong>Automated E2E Tests:</strong> Automated end-to-end tests (e.g., Selenium, Cypress) run against the staging environment, providing early feedback.</li>
+                    <li><strong>Manual Approval (Optional):</strong> For critical releases, a manual approval step is introduced before production deployment.</li>
+                    <li><strong>Production Deployment:</strong> On approval, Kubernetes manifests (templated by Helm) are applied to the production cluster, often utilizing blue/green or canary deployment strategies.</li>
+                    <li><strong>Monitoring & Rollback:</strong> Post-deployment, Prometheus and Grafana continuously monitor application health, performance, and resource utilization. Automated rollback scripts are in place for quick recovery from issues.</li>
+                </ol>
+
+                <img src="../images/ci-cd-pipeline-diagram.png" alt="CI/CD Pipeline Diagram">
+                <figcaption>Simplified diagram of the CI/CD pipeline showcasing key stages and tools.</figcaption>
+
+                <h3>Key Achievements & Results:</h3>
+                <ul>
+                    <li>**Reduced average deployment time from 2 hours to 15 minutes**, a 87.5% improvement.</li>
+                    <li>**Decreased deployment-related errors by 80%** due to automation and early testing.</li>
+                    <li>**Improved developer productivity by 30%** by allowing self-service deployments to staging environments and faster feedback loops.</li>
+                    <li>Established a repeatable, consistent, and traceable deployment process across all microservices.</li>
+                    <li>Enhanced system observability through centralized logging and metrics, leading to faster issue resolution.</li>
+                </ul>
+
+                <h3>Challenges & Solutions:</h3>
+                <p><strong>Challenge:</strong> Managing environment-specific configurations (e.g., database URLs, API keys) across different stages (dev, staging, prod) securely.</p>
+                <p><strong>Solution:</strong> Implemented Helm charts for Kubernetes deployments, allowing dynamic configuration injection based on the target environment using `values.yaml` files. Sensitive data was managed through Kubernetes Secrets, integrated with Jenkins Credentials Plugin.</p>
+
+                <p><strong>Challenge:</strong> Orchestrating complex multi-service deployments and ensuring dependencies were met across different Kubernetes namespaces.</p>
+                <p><strong>Solution:</strong> Utilized Helm's dependency management features and structured Kubernetes manifests with appropriate readiness/liveness probes and network policies to ensure stable rollouts. Implemented a gradual rollout strategy with `maxUnavailable` and `maxSurge` to minimize downtime.</p>
+
+                <div class="project-links">
+                    <a href="https://github.com/your-github-username/project-repo-ci-cd" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                <p style="margin-top: 50px; text-align: center;"><a href="../index.html#projects" class="project-link">&larr; Back to Projects</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year-project"></span> Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-project').textContent = new Date().getFullYear();
+
+        // Re-include basic burger menu JS for project pages
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(innerLink => {
+                    innerLink.style.animation = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
