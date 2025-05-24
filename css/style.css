@@ -6,14 +6,14 @@
 }
 
 :root {
-    /* Minimal Dark Palette */
+    /* Minimal Light Palette */
     --primary-color: #007bff; /* A clean, modern blue for accents */
-    --secondary-color: #212529; /* Darker charcoal for headers/footers */
+    --secondary-color: #f8f9fa; /* Light background for headers/footers */
     --accent-color: #dc3545; /* Subtle red for warnings/special highlights */
-    --text-color: #f8f9fa; /* Light grey for primary text */
-    --background-color: #1a1a1a; /* Very dark background */
-    --card-background: #2b2b2b; /* Slightly lighter dark for cards */
-    --border-color: rgba(255, 255, 255, 0.1); /* Very subtle white border */
+    --text-color: #343a40; /* Dark charcoal for primary text */
+    --background-color: #ffffff; /* Pure white background */
+    --card-background: #f0f2f5; /* Very light grey for cards */
+    --border-color: rgba(0, 0, 0, 0.08); /* Very subtle dark border */
 
     /* Fonts */
     --body-font: 'Inter', sans-serif;
@@ -21,20 +21,20 @@
 
     --transition-speed: 0.2s; /* Faster, snappier transitions */
     --border-radius: 4px; /* Slightly less rounded */
-    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Subtle, standard shadow */
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle, standard shadow */
 }
 
 body {
     font-family: var(--body-font);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--text-color); /* Dark text on light background */
+    background-color: var(--background-color); /* White background */
     scroll-behavior: smooth;
-    font-weight: 300; /* Lighter font weight for minimal feel */
+    font-weight: 300;
 }
 
 .container {
-    max-width: 1100px; /* Slightly narrower container */
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -43,7 +43,7 @@ a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color var(--transition-speed);
-    font-weight: 500; /* Slightly bolder for links */
+    font-weight: 500;
 }
 
 a:hover {
@@ -52,9 +52,9 @@ a:hover {
 
 h1, h2, h3 {
     font-family: var(--heading-font);
-    color: var(--text-color);
+    color: var(--text-color); /* Dark text */
     margin-bottom: 20px;
-    font-weight: 600; /* Clearer hierarchy for headings */
+    font-weight: 600;
 }
 
 h1 {
@@ -75,7 +75,7 @@ h2::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px; /* Shorter, thinner underline */
+    width: 60px;
     height: 2px;
     background-color: var(--primary-color);
 }
@@ -83,8 +83,8 @@ h2::after {
 .btn {
     display: inline-block;
     background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 22px; /* Smaller padding */
+    color: #fff; /* White text on blue button */
+    padding: 10px 22px;
     border-radius: var(--border-radius);
     transition: background-color var(--transition-speed), transform var(--transition-speed);
     margin-top: 20px;
@@ -92,17 +92,17 @@ h2::after {
     cursor: pointer;
     font-weight: 500;
     letter-spacing: 0.5px;
-    box-shadow: var(--box-shadow); /* Subtle shadow */
+    box-shadow: var(--box-shadow);
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-1px); /* Very subtle lift */
+    background-color: #0056b3;
+    transform: translateY(-1px);
 }
 
 .btn-download {
     background-color: transparent;
-    border: 1px solid var(--primary-color); /* Thinner border */
+    border: 1px solid var(--primary-color);
     color: var(--primary-color);
     padding: 9px 20px;
     border-radius: var(--border-radius);
@@ -123,14 +123,14 @@ h2::after {
 
 /* Header & Navigation */
 header {
-    background-color: var(--secondary-color);
-    color: #fff;
+    background-color: var(--secondary-color); /* Light background for header */
+    color: var(--text-color); /* Dark text for header */
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: var(--box-shadow);
-    border-bottom: 1px solid var(--border-color); /* Thin, subtle border */
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav {
@@ -143,9 +143,9 @@ nav {
 }
 
 .logo a {
-    color: #fff;
+    color: var(--text-color); /* Dark text for logo */
     font-size: 1.6em;
-    font-weight: 700; /* Bold for logo */
+    font-weight: 700;
     text-decoration: none;
     font-family: var(--heading-font);
 }
@@ -156,15 +156,15 @@ nav {
 }
 
 .nav-links li {
-    margin-left: 25px; /* Less spacing than techy */
+    margin-left: 25px;
 }
 
 .nav-links a {
-    color: #fff;
-    font-weight: 400; /* Lighter weight */
+    color: var(--text-color); /* Dark text for nav links */
+    font-weight: 400;
     padding: 5px 0;
     position: relative;
-    letter-spacing: 0; /* No letter spacing */
+    letter-spacing: 0;
 }
 
 .nav-links a::after {
@@ -189,9 +189,9 @@ nav {
 }
 
 .burger div {
-    width: 22px; /* Smaller burger */
+    width: 22px;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Blue for burger lines */
     margin: 4px;
     transition: all 0.3s ease;
 }
@@ -201,13 +201,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 60px); /* Adjust based on header height */
+    min-height: calc(100vh - 60px);
     text-align: center;
     padding: 30px 20px;
-    background-color: var(--background-color);
+    background-color: var(--background-color); /* White background */
     gap: 40px;
     flex-wrap: wrap-reverse;
-    background: linear-gradient(135deg, #f0f2f5, #e0e5ec); /* Example gradient */
 }
 
 .hero-content {
@@ -224,7 +223,7 @@ nav {
 .hero-content p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    color: rgba(248, 249, 250, 0.8);
+    color: var(--text-color); /* Dark text */
     font-weight: 300;
 }
 
@@ -233,12 +232,12 @@ nav {
     height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color); /* Thinner border */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4); /* More subtle glow */
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.2); /* More subtle glow, using primary color */
 }
 
 .social-links a {
-    color: var(--text-color); /* Default text color for minimal social icons */
+    color: var(--text-color); /* Dark color for social icons */
     font-size: 2em;
     margin: 0 12px;
     transition: color var(--transition-speed), transform var(--transition-speed);
@@ -246,7 +245,7 @@ nav {
 
 .social-links a:hover {
     color: var(--primary-color);
-    transform: translateY(-3px); /* Subtle movement */
+    transform: translateY(-3px);
 }
 
 
@@ -257,7 +256,7 @@ section {
 }
 
 .about-me, .contact {
-    background-color: var(--card-background);
+    background-color: var(--card-background); /* Light grey card background */
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -266,6 +265,7 @@ section {
     max-width: 700px;
     margin: 0 auto 20px auto;
     font-weight: 300;
+    color: var(--text-color); /* Dark text */
 }
 
 /* Skills Section */
@@ -286,7 +286,7 @@ section {
     color: var(--primary-color);
     font-size: 1.6em;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 123, 255, 0.3); /* Thinner line */
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2); /* Thinner line */
     display: inline-block;
     padding-bottom: 5px;
     font-weight: 600;
@@ -300,20 +300,20 @@ section {
 }
 
 .skill-list span {
-    background-color: rgba(0, 123, 255, 0.1); /* Very subtle background for tags */
+    background-color: rgba(0, 123, 255, 0.05); /* Very subtle blue tint */
     color: var(--primary-color);
     padding: 8px 15px;
     border-radius: var(--border-radius);
     font-size: 0.95em;
-    box-shadow: none; /* No shadow */
+    box-shadow: none;
     transition: background-color var(--transition-speed), transform var(--transition-speed);
-    border: 1px solid rgba(0, 123, 255, 0.2); /* Subtle border */
+    border: 1px solid rgba(0, 123, 255, 0.1); /* Subtle border */
     font-weight: 400;
 }
 
 .skill-list span:hover {
     transform: translateY(-2px);
-    background-color: rgba(0, 123, 255, 0.2); /* Slightly more prominent on hover */
+    background-color: rgba(0, 123, 255, 0.15);
 }
 
 /* Projects Section */
@@ -325,10 +325,10 @@ section {
 }
 
 .project-card {
-    background-color: var(--card-background);
+    background-color: var(--card-background); /* Light grey card background */
     padding: 30px;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow); /* Subtle shadow */
+    box-shadow: var(--box-shadow);
     text-align: left;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
     display: flex;
@@ -338,8 +338,8 @@ section {
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Slightly more pronounced shadow on hover */
-    border-color: var(--primary-color); /* Highlight border on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow on hover */
+    border-color: var(--primary-color);
 }
 
 .project-card h3 {
@@ -347,10 +347,11 @@ section {
     margin-bottom: 10px;
     line-height: 1.3;
     font-weight: 600;
+    color: var(--text-color); /* Dark text */
 }
 
 .project-card h3 a {
-    color: var(--text-color);
+    color: var(--text-color); /* Dark text */
     transition: color var(--transition-speed);
 }
 
@@ -361,7 +362,7 @@ section {
 .project-description {
     font-size: 0.95em;
     margin-bottom: 15px;
-    color: rgba(248, 249, 250, 0.8);
+    color: var(--text-color); /* Dark text */
     flex-grow: 1;
     font-weight: 300;
 }
@@ -375,12 +376,12 @@ section {
 }
 
 .project-tech span {
-    background-color: rgba(0, 123, 255, 0.08); /* Very subtle background */
+    background-color: rgba(0, 123, 255, 0.05); /* Very subtle background */
     color: var(--primary-color);
     padding: 5px 10px;
     border-radius: 3px;
     font-size: 0.85em;
-    border: 1px solid rgba(0, 123, 255, 0.15);
+    border: 1px solid rgba(0, 123, 255, 0.1);
     font-weight: 400;
 }
 
@@ -410,6 +411,7 @@ section {
     font-size: 1.05em;
     margin-bottom: 10px;
     font-weight: 300;
+    color: var(--text-color); /* Dark text */
 }
 
 .contact-info a {
@@ -429,8 +431,8 @@ section {
 
 /* Footer */
 footer {
-    background-color: var(--secondary-color);
-    color: rgba(248, 249, 250, 0.6);
+    background-color: var(--secondary-color); /* Light background for footer */
+    color: rgba(52, 58, 64, 0.7); /* Darker text for footer */
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
@@ -445,7 +447,7 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        top: 60px; /* Adjust based on new header height */
+        top: 60px;
         width: 70%;
     }
 
@@ -487,14 +489,14 @@ footer p {
 /* Burger Animation */
 .toggle .line1 {
     transform: rotate(-45deg) translate(-4px, 4px);
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Burger turns red on close */
 }
 .toggle .line2 {
     opacity: 0;
 }
 .toggle .line3 {
     transform: rotate(45deg) translate(-4px, -4px);
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Burger turns red on close */
 }
 
 /* Nav Links Animation */
