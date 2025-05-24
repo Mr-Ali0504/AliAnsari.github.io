@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IaC with Terraform - Your Name DevOps Portfolio</title>
+    <title>Terraform Playzone - Asgar Ali Ansari DevOps Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Specific styles for project pages */
+        /* Specific styles for project pages - Adjusted for Minimal Design */
         .project-detail {
             padding: 80px 0;
             text-align: left;
@@ -18,43 +19,47 @@
             background-color: var(--card-background);
             padding: 40px;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: var(--box-shadow);
         }
         .project-detail h1 {
             font-size: 2.8em;
             text-align: center;
             margin-bottom: 30px;
             color: var(--primary-color);
+            font-weight: 700;
         }
         .project-detail h3 {
             font-size: 1.8em;
             margin-top: 30px;
             margin-bottom: 15px;
             color: var(--text-color);
-            border-bottom: 2px solid rgba(0, 173, 181, 0.3);
+            border-bottom: 1px solid rgba(0, 123, 255, 0.3); /* Minimal border */
             padding-bottom: 5px;
+            font-weight: 600;
         }
         .project-detail p, .project-detail ul, .project-detail ol {
             margin-bottom: 15px;
-            line-height: 1.8;
-            color: rgba(238, 238, 238, 0.9);
+            line-height: 1.6;
+            color: rgba(248, 249, 250, 0.8);
+            font-weight: 300;
         }
         .project-detail img {
             max-width: 100%;
             height: auto;
             border-radius: var(--border-radius);
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
             display: block; /* Center images */
             margin-left: auto;
             margin-right: auto;
         }
         .project-detail figcaption {
             font-size: 0.9em;
-            color: rgba(238, 238, 238, 0.7);
+            color: rgba(248, 249, 250, 0.7);
             margin-top: -10px;
             margin-bottom: 20px;
             text-align: center;
+            font-weight: 300;
         }
         .project-detail ul, .project-detail ol {
             list-style-position: inside;
@@ -62,6 +67,7 @@
         }
         .project-detail ul li, .project-detail ol li {
             margin-bottom: 8px;
+            font-weight: 300;
         }
         .project-links {
             margin-top: 30px;
@@ -69,8 +75,14 @@
         }
         .project-links .btn {
             margin: 0 15px;
-            font-size: 1.1em;
+            font-size: 1.05em;
             padding: 10px 20px;
+        }
+        /* Project-tech specific for detail page */
+        .project-detail .project-tech {
+            justify-content: flex-start; /* Align tags to left */
+            margin-left: 0; /* Remove auto margin */
+            margin-right: auto;
         }
     </style>
 </head>
@@ -78,7 +90,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="../index.html">Your Name</a>
+                <a href="../index.html">Asgar Ali Ansari</a>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html#about">About</a></li>
@@ -98,66 +110,65 @@
     <main>
         <section class="project-detail">
             <div class="container">
-                <h1>Infrastructure as Code with Terraform on AWS</h1>
+                <h1>Terraform Playzone & Experimentation</h1>
 
-                <p><strong>Problem Statement:</strong> Our existing cloud infrastructure was provisioned manually, leading to inconsistencies, configuration drift, and significant delays in spinning up new environments. This made disaster recovery and scaling challenging and error-prone.</p>
+                <p><strong>Problem Statement:</strong> Staying current with the rapidly evolving Infrastructure as Code (IaC) landscape and mastering new cloud services requires continuous experimentation. This repository serves as a personal sandbox to explore, learn, and validate various Terraform features, providers, and advanced deployment patterns without impacting production environments.</p>
 
                 <h3>My Role & Responsibilities:</h3>
                 <ul>
-                    <li>Designed and implemented an Infrastructure as Code (IaC) strategy using Terraform for provisioning and managing AWS resources.</li>
-                    <li>Created modular and reusable Terraform modules for common AWS services (VPC, EC2, RDS, S3, ALB, Route 53).</li>
-                    <li>Managed Terraform state using S3 backend with DynamoDB locking to ensure collaboration and prevent conflicts.</li>
-                    <li>Integrated Terraform with CI/CD pipelines (e.g., Jenkins, GitHub Actions) for automated infrastructure deployments.</li>
-                    <li>Implemented best practices for security (IAM roles, security groups), cost optimization (instance types, autoscaling), and high availability (multi-AZ deployments).</li>
-                    <li>Developed custom Terraform providers/scripts where native resources were insufficient.</li>
-                    <li>Documented infrastructure architecture and Terraform usage.</li>
+                    <li>Actively explored new Terraform features and providers (e.g., specific AWS services, Kubernetes provider, Docker provider).</li>
+                    <li>Developed and tested advanced IaC concepts like dynamic blocks, complex data sources, and custom modules.</li>
+                    <li>Experimented with different state management strategies and backend configurations (e.g., S3, Terraform Cloud).</li>
+                    <li>Implemented various deployment patterns and solutions for specific cloud challenges (e.g., serverless setups, advanced networking).</li>
+                    <li>Documented learning processes, common pitfalls, and effective solutions found during experimentation.</li>
+                    <li>Maintained a clean and organized repository of reusable code snippets and module examples.</li>
                 </ul>
 
                 <h3>Technologies Used:</h3>
                 <div class="project-tech">
                     <span>Terraform</span>
                     <span>AWS</span>
-                    <span>VPC</span>
-                    <span>EC2</span>
-                    <span>RDS</span>
-                    <span>S3</span>
-                    <span>Lambda</span>
-                    <span>IAM</span>
+                    <span>Azure (if applicable)</span>
+                    <span>GCP (if applicable)</span>
+                    <span>Docker</span>
+                    <span>Kubernetes (if used for infra)</span>
+                    <span>HashiCorp Vault (if used)</span>
+                    <span>Terragrunt (if used)</span>
                     <span>Git</span>
+                    <span>Bash Scripting</span>
                 </div>
 
                 <h3>Implementation Details:</h3>
-                <p>The project involved transitioning from manual AWS console operations to a fully automated IaC approach:</p>
+                <p>The `terraform-playzone` repository is structured to facilitate quick and isolated experimentation:</p>
                 <ol>
-                    <li><strong>Infrastructure Blueprints:</strong> Defined network architecture (VPCs, subnets, route tables), compute resources (EC2 instances, Auto Scaling Groups), databases (RDS), storage (S3 buckets), and load balancers (ALB) using Terraform HCL.</li>
-                    <li><strong>Module Development:</strong> Created self-contained Terraform modules for common resource patterns to promote reusability and reduce code duplication across projects.</li>
-                    <li><strong>State Management:</strong> Configured an S3 bucket for remote Terraform state storage and DynamoDB for state locking, crucial for team collaboration and preventing concurrent modifications.</li>
-                    <li><strong>Automated Deployment:</strong> Integrated Terraform `plan` and `apply` commands into CI/CD pipelines (e.g., GitHub Actions workflow) to automate infrastructure provisioning upon code merges to the main branch.</li>
-                    <li><strong>Environment Separation:</strong> Used Terraform workspaces or separate folders for `dev`, `staging`, and `production` environments, ensuring isolated and consistent deployments.</li>
-                    <li><strong>Security & Compliance:</strong> Implemented AWS IAM roles with least privilege, configured security groups, and used KMS for encryption of sensitive data. Ensured compliance with organizational policies through Terraform resource definitions.</li>
+                    <li><strong>Modular Structure:</strong> Organized into separate folders (e.g., `ex00_intro`, `ex01_packer_aws_ami`, `ex02_terraform_basics`) for different learning objectives or experiments.</li>
+                    <li><strong>Diverse AWS Services:</strong> Explored a range of AWS services, including but not limited to EC2, VPC, S3, RDS, Lambda, EKS, ECS, IAM, and Route 53, often focusing on their specific Terraform resource configurations.</li>
+                    <li><strong>Best Practices Application:</strong> While a "playzone," efforts were made to apply IaC best practices such as idempotency, dependency management, and resource tagging where appropriate.</li>
+                    <li><strong>Continuous Learning:</strong> Each directory often contains `main.tf`, `variables.tf`, `outputs.tf`, and a `README.md` explaining the specific concept being tested or the resource being provisioned.</li>
+                    <li><strong>Safe Experimentation:</strong> The primary goal is learning and proof-of-concept, ensuring that experiments are isolated and easily torn down to avoid unintended costs or resource lingering.</li>
                 </ol>
 
-                <img src="../images/aws-architecture-diagram.png" alt="AWS Architecture Diagram">
-                <figcaption>Example AWS architecture provisioned using Terraform.</figcaption>
+                <img src="../images/terraform-playzone-example.png" alt="Terraform Playzone Example Screenshot">
+                <figcaption>Example screenshot of a Terraform plan output or a simple architecture provisioned in the playzone.</figcaption>
 
                 <h3>Key Achievements & Results:</h3>
                 <ul>
-                    <li>**Reduced infrastructure provisioning time by 90%**, from hours/days to minutes.</li>
-                    <li>**Eliminated configuration drift** by ensuring all infrastructure is defined and managed as code.</li>
-                    <li>**Improved disaster recovery capabilities** through reproducible environment deployments.</li>
-                    <li>**Enhanced security posture** with consistent application of security policies through code.</li>
-                    <li>**Lowered operational costs** by optimizing resource allocation and lifecycle management.</li>
+                    <li>**Demonstrates a strong commitment to continuous learning** and mastering new DevOps tools and cloud services.</li>
+                    <li>**Built hands-on expertise** in various advanced Terraform configurations and cloud resource interactions.</li>
+                    <li>**Developed reusable code snippets and patterns** that can be adapted for future production projects.</li>
+                    <li>**Enhanced problem-solving skills** by tackling real-world infrastructure challenges in a controlled environment.</li>
+                    <li>**Showcases proactive engagement** with cutting-edge IaC methodologies.</li>
                 </ul>
 
                 <h3>Challenges & Solutions:</h3>
-                <p><strong>Challenge:</strong> Managing dependencies between different Terraform modules and ensuring proper resource creation order.</p>
-                <p><strong>Solution:</strong> Leveraged Terraform's `depends_on` meta-argument and structured modules carefully to ensure implicit dependencies were correctly handled. Used `terraform output` to pass values between root modules where explicit dependencies were necessary.</p>
+                <p><strong>Challenge:</strong> Debugging complex Terraform configurations, especially with multiple providers and intricate resource interdependencies.</p>
+                <p><strong>Solution:</strong> Heavily utilized `terraform validate`, `terraform plan -destroy`, and `terraform console` for debugging. Adopted a modular design from the start to isolate issues and make configurations more manageable.</p>
 
-                <p><strong>Challenge:</strong> Handling sensitive data (e.g., database passwords) within Terraform configurations securely without exposing them in plain text.</p>
-                <p><strong>Solution:</strong> Utilized AWS Secrets Manager to store sensitive data and referenced these secrets within Terraform using data sources, ensuring secrets are never hardcoded or stored in state files unencrypted.</p>
+                <p><strong>Challenge:</strong> Ensuring resources are properly cleaned up after experiments to avoid unexpected cloud costs.</p>
+                <p><strong>Solution:</strong> Consistently used `terraform destroy` after each experiment. For more complex setups, implemented scripts to automate cleanup or used features like AWS CloudFormation stack deletion for entire environments.</p>
 
                 <div class="project-links">
-                    <a href="https://github.com/your-github-username/project-repo-iac-aws" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                    <a href="https://github.com/Mr-Ali0504/terraform-playzone" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
                     </div>
 
                 <p style="margin-top: 50px; text-align: center;"><a href="../index.html#projects" class="project-link">&larr; Back to Projects</a></p>
@@ -167,13 +178,13 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year-project"></span> Your Name. All rights reserved.</p>
-        </div>
-    </footer>
+            <p>&copy; <span id="current-year-project"></span> Asgar Ali Ansari. All rights reserved.</p>
+        S</footer>
 
     <script>
         document.getElementById('current-year-project').textContent = new Date().getFullYear();
 
+        // Re-include basic burger menu JS for project pages
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         const navLinks = document.querySelectorAll('.nav-links li');
