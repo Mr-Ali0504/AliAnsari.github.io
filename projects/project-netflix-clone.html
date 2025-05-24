@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps for Netflix Clone - Asgar Ali Ansari DevOps Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Specific styles for project pages - Adjusted for Minimal Design */
+        .project-detail {
+            padding: 80px 0;
+            text-align: left;
+            background-color: var(--background-color);
+        }
+        .project-detail .container {
+            max-width: 900px;
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        .project-detail h1 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .project-detail h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            border-bottom: 1px solid rgba(0, 123, 255, 0.3); /* Minimal border */
+            padding-bottom: 5px;
+            font-weight: 600;
+        }
+        .project-detail p, .project-detail ul, .project-detail ol {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: rgba(248, 249, 250, 0.8);
+            font-weight: 300;
+        }
+        .project-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+            display: block; /* Center images */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .project-detail figcaption {
+            font-size: 0.9em;
+            color: rgba(248, 249, 250, 0.7);
+            margin-top: -10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 300;
+        }
+        .project-detail ul, .project-detail ol {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        .project-detail ul li, .project-detail ol li {
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .project-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .project-links .btn {
+            margin: 0 15px;
+            font-size: 1.05em;
+            padding: 10px 20px;
+        }
+        /* Project-tech specific for detail page */
+        .project-detail .project-tech {
+            justify-content: flex-start; /* Align tags to left */
+            margin-left: 0; /* Remove auto margin */
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Asgar Ali Ansari</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="../assets/resume.pdf" target="_blank" class="btn-download">Resume</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <div class="container">
+                <h1>DevOps for Netflix Clone</h1>
+
+                <p><strong>Problem Statement:</strong> Building a scalable and resilient Netflix-like streaming service requires robust infrastructure and efficient delivery mechanisms. The challenge was to implement a full DevOps pipeline for continuous integration, delivery, and deployment, ensuring high availability and seamless updates for microservices.</p>
+
+                <h3>My Role & Responsibilities:</h3>
+                <ul>
+                    <li>Designed and implemented a containerization strategy for both frontend (React) and backend (Node.js/Python) microservices using Docker.</li>
+                    <li>Developed multi-stage Dockerfiles to optimize image size and build efficiency for production deployments.</li>
+                    <li>Configured Jenkins CI/CD pipelines to automate the build, test, and deployment processes to a Kubernetes cluster.</li>
+                    <li>Utilized Kubernetes (EKS/AKS/GKE - *specify if you used a particular cloud provider's K8s*) for orchestrating microservices, managing deployments, and ensuring high availability.</li>
+                    <li>Implemented Helm charts for declarative management of Kubernetes applications, facilitating easy versioning and environment-specific configurations.</li>
+                    <li>Set up basic monitoring and logging for the application and infrastructure using Prometheus and Grafana.</li>
+                    <li>Integrated GitOps principles for managing Kubernetes configurations, ensuring infrastructure and application states are version-controlled and auditable.</li>
+                </ul>
+
+                <h3>Technologies Used:</h3>
+                <div class="project-tech">
+                    <span>Docker</span>
+                    <span>Kubernetes</span>
+                    <span>Jenkins</span>
+                    <span>Helm</span>
+                    <span>GitLab CI/CD (if you used GitLab for CI/CD)</span>
+                    <span>GitHub Actions (if you used GitHub Actions for CI/CD)</span>
+                    <span>Node.js</span>
+                    <span>React.js</span>
+                    <span>Prometheus</span>
+                    <span>Grafana</span>
+                    <span>Linux</span>
+                    <span>Bash Scripting</span>
+                    <span>AWS (e.g., EKS, EC2, S3) / Azure (e.g., AKS, VMs) / GCP (e.g., GKE, Compute Engine) - *Specify your cloud provider*</span>
+                </div>
+
+                <h3>Implementation Details:</h3>
+                <p>This project focused on establishing a complete DevOps lifecycle for the Netflix clone application:</p>
+                <ol>
+                    <li><strong>Containerization:</strong> Each microservice (e.g., user authentication, content management, streaming service) was containerized using Docker, isolating dependencies and ensuring consistent environments. Multi-stage builds were used to reduce final image size.</li>
+                    <li><strong>CI/CD Pipeline (Jenkins):</strong>
+                        <ul>
+                            <li><strong>Source Code Management:</strong> Code commits to GitLab/GitHub triggered Jenkins pipelines.</li>
+                            <li><strong>Build & Test:</strong> Jenkins built Docker images, ran unit and integration tests.</li>
+                            <li><strong>Image Registry:</strong> Pushed images to a private container registry (e.g., Docker Hub, AWS ECR).</li>
+                            <li><strong>Deployment:</strong> Deployed applications to a staging Kubernetes cluster for automated end-to-end testing.</li>
+                            <li><strong>Production Rollout:</strong> Upon successful testing and manual approval, the pipeline promoted and deployed the services to the production Kubernetes cluster, utilizing rolling updates for zero-downtime.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kubernetes Orchestration:</strong>
+                        <ul>
+                            <li>Deployed applications using Kubernetes deployments and services.</li>
+                            <li>Used `Ingress` controllers for external access and load balancing.</li>
+                            <li>Managed configurations and secrets within Kubernetes.</li>
+                            <li>Implemented resource requests and limits to ensure stable resource allocation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Helm Charts:</strong> Created Helm charts for simplified deployment and management of complex microservice applications on Kubernetes. This allowed for easy parameterization and versioning of application releases.</li>
+                    <li><strong>Monitoring & Alerting:</strong> Set up Prometheus to scrape metrics from Kubernetes nodes, pods, and applications. Grafana dashboards provided real-time insights into application performance, resource utilization, and error rates.</li>
+                </ol>
+
+                <img src="../images/netflix-clone-architecture.png" alt="Netflix Clone DevOps Architecture">
+                <figcaption>Conceptual diagram of the Netflix Clone DevOps architecture.</figcaption>
+
+                <h3>Key Achievements & Results:</h3>
+                <ul>
+                    <li>**Automated build and deployment processes**, significantly reducing manual effort and human error.</li>
+                    <li>**Enabled rapid iteration and continuous delivery** of new features with reduced time-to-market.</li>
+                    <li>**Ensured application scalability and high availability** through Kubernetes orchestration and proper resource management.</li>
+                    <li>**Established clear visibility into application health and performance** via comprehensive monitoring.</li>
+                    <li>**Demonstrated end-to-end proficiency** in containerization, CI/CD, Kubernetes, and cloud deployment.</li>
+                </ul>
+
+                <h3>Challenges & Solutions:</h3>
+                <p><strong>Challenge:</strong> Managing stateful components (e.g., databases for user data, content metadata) within a containerized, ephemeral Kubernetes environment.</p>
+                <p><strong>Solution:</strong> Leveraged cloud-managed database services (e.g., AWS RDS, Azure SQL Database) outside the Kubernetes cluster for persistent storage. For container-native stateful applications (if any), utilized Kubernetes `StatefulSets` with persistent volumes.</p>
+
+                <p><strong>Challenge:</strong> Optimizing Docker image sizes and build times for faster CI/CD cycles.</p>
+                <p><strong>Solution:</strong> Implemented multi-stage Docker builds to separate build-time dependencies from runtime dependencies. Used `.dockerignore` files to exclude unnecessary files from the build context.</p>
+
+                <div class="project-links">
+                    <a href="https://github.com/Mr-Ali0504/DevOps-02-Netflix-Clone" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                <p style="margin-top: 50px; text-align: center;"><a href="../index.html#projects" class="project-link">&larr; Back to Projects</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year-project"></span> Asgar Ali Ansari. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-project').textContent = new Date().getFullYear();
+
+        // Re-include basic burger menu JS for project pages
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+                navLinks.forEach(innerLink => {
+                    innerLink.style.animation = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
