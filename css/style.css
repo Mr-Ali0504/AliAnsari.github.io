@@ -207,6 +207,7 @@ nav {
     background-color: var(--background-color);
     gap: 40px;
     flex-wrap: wrap-reverse;
+    background: linear-gradient(135deg, #f0f2f5, #e0e5ec); /* Example gradient */
 }
 
 .hero-content {
